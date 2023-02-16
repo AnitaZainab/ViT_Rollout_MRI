@@ -1,3 +1,4 @@
+Anita MASLIAH et Rayan MARIETTE
 # ViT_Rollout_MRI
 Projet de MLOps Machine learning end to end allant du dataset ( interpretation, pre processing, analyse) en passant par le développement jusqu'au déployement avec une notion d'explicabilité nécessaire dans notre cas d'étude à savoir l'imagerie médicale. Notre dataset est composé d'images médicales cérébrales à classifier grâce au machine learning. Deux algorithmes basés sur la méthode transformer sont proposés : transformer + heatmap, transformer + attention rollout.
 
