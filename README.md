@@ -22,8 +22,17 @@ Source : https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classificatio
 
 source : https://keras.io/examples/vision/probing_vits/
 
+Permet d'afficher les zone de concentration du ML sur les images étudiées. 
+L'algorithme "Transformer_rollout" permet d'utiliser le model vit_b16_patch16_224. On importe le dataset, on preprocess les images en changeant leur taille à 224*224 puis on charge le modèle. 
+"""
+preprocessed_image = preprocess_image(image, "original_vit")
+predictions, attention_score_dict = vit_base_i21k_patch16_224.predict(preprocessed_image)
+attn_rollout_result = attention_rollout_map(pic, attention_score_dict, model_type="original_vit")
+"""
+Sont les étapes à suivre pour obtenir la map final.
+Une partie classification en compilant et entraînant le modèle est ensuite détaillé mais présente des problèmes de RAM avec collab gratuit.
 
-# Transformers
+# Heatmap
 
 # Transformers
 Les algorithmes de Transformer avec déploiement d'attention ou cartes thermiques sont des techniques pour visualiser et comprendre comment un modèle de vision Transformer fait des prédictions. Ils peuvent être utiles pour améliorer la transparence et la compréhension des modèles de vision, ce qui peut être important dans des domaines tels que la médecine où les décisions du modèle peuvent avoir des conséquences importantes pour les patients. Les algorithmes de Transformer avec déploiement d'attention permettent de visualiser les régions de l'image qui ont été les plus influentes pour une prédiction donnée. Cela peut aider à comprendre comment le modèle interagit avec les différentes parties de l'image pour faire des prédictions. Les algorithmes de cartes thermiques fonctionnent de manière similaire, en utilisant une représentation visuelle pour montrer les régions de l'image qui ont été les plus importantes pour une prédiction. Dans le cas d'un projet de classification de tumeurs cérébrales à l'aide d'un modèle de Vision Transformer, ces algorithmes pourraient être utiles pour comprendre comment le modèle fait des prédictions pour différents types de tumeurs et comment il utilise les informations de l'image pour faire des prédictions. Cela peut aider à identifier des domaines où le modèle peut être amélioré ou des sources potentielles de biais, ce qui peut améliorer la qualité et la fiabilité des résultats.
