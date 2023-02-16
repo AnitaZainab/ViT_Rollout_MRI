@@ -24,11 +24,13 @@ source : https://keras.io/examples/vision/probing_vits/
 
 Permet d'afficher les zone de concentration du ML sur les images étudiées. 
 L'algorithme "Transformer_rollout" permet d'utiliser le model vit_b16_patch16_224. On importe le dataset, on preprocess les images en changeant leur taille à 224*224 puis on charge le modèle. 
-"""
+
+"
 preprocessed_image = preprocess_image(image, "original_vit")
 predictions, attention_score_dict = vit_base_i21k_patch16_224.predict(preprocessed_image)
 attn_rollout_result = attention_rollout_map(pic, attention_score_dict, model_type="original_vit")
-"""
+"
+
 Sont les étapes à suivre pour obtenir la map final.
 Une partie classification en compilant et entraînant le modèle est ensuite détaillé mais présente des problèmes de RAM avec collab gratuit.
 
